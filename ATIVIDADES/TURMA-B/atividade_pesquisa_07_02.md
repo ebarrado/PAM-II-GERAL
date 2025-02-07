@@ -20,4 +20,6 @@
     * Uso correto de termos técnicos e exemplos de código funcionais.
     * Apresentação visual (se for o caso) e criatividade.
 5. Entrega
-    * Enviar atividade para o e-mail: [erika.barrado@etec.sp.gov.br] (erika.barrado@etec.sp.gov.br) até 14/02
+    * Enviar atividade para o e-mail: erika.barrado@etec.sp.gov.br até 14/02
+    * Assunto: nomecompleto - Atividade Pesquisa
+    * Mensagem: Turma?
