@@ -32,6 +32,7 @@ Stack criarStack() {
         width: double.infinity,
         fit: BoxFit.cover,
       ),
+      Positioned(bottom: 100, left: 130, child: Text('DS Turma B')),
     ],
   );
 }
