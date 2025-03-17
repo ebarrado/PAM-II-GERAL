@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 //stl - Selecionar StatelesWidget
-class PilhaCompentes extends StatelessWidget {
-  const PilhaCompentes({super.key});
+class PilhaCompenentes extends StatelessWidget {
+  const PilhaCompenentes({super.key});
 
   @override
   Widget build(BuildContext context) {
