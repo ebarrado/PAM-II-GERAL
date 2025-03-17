@@ -43,6 +43,18 @@ Stack criarPilhaComponente() {
         width: double.infinity,
         fit: BoxFit.cover,
       ),
+      Positioned(
+        bottom: 50,
+        left: 100,
+        child: Text(
+          "DESENVOLVIMENTO SISTEMAS - TURMA A",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontFamily: "Arial",
+          ),
+        ),
+      ),
     ],
   );
 }
