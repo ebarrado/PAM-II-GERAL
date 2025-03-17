@@ -9,9 +9,11 @@ class PilhaCompenentes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Componentes usando Pilha",
-          style: TextStyle(color: Colors.amber),
+        title: Center(
+          child: Text(
+            "Componentes usando Pilha",
+            style: TextStyle(color: const Color.fromARGB(255, 248, 248, 248)),
+          ),
         ),
         backgroundColor: Colors.lightBlueAccent,
         actions: [
@@ -33,5 +35,14 @@ class PilhaCompenentes extends StatelessWidget {
 }
 
 Stack criarPilhaComponente() {
-  return Stack();
+  return Stack(
+    children: [
+      Image.network(
+        "https://marketplace.canva.com/EAFhiTDWcOg/1/0/900w/canva-imagem-de-fundo-de-tela-para-celular-borboleta-degrad%C3%AA-azul-e-verde-_37ytwE_kmo.jpg",
+        height: double.infinity,
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
+    ],
+  );
 }
