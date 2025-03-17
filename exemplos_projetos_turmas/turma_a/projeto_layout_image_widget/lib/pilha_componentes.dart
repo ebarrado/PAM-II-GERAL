@@ -27,6 +27,11 @@ class PilhaCompentes extends StatelessWidget {
           ),
         ],
       ),
+      body: criarPilhaComponente(),
     );
   }
+}
+
+Stack criarPilhaComponente() {
+  return Stack();
 }
