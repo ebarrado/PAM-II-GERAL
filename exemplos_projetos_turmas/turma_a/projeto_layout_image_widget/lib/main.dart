@@ -15,7 +15,7 @@ class Pagina extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Exemplo Stack Pagina",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: PilhaCompenentes(),
+      home: PilhaComponentes(),
     );
   }
 }
