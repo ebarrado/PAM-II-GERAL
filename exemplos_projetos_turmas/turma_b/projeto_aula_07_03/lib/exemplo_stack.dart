@@ -1,5 +1,6 @@
 // exemplo_stack.dart
 import 'package:flutter/material.dart';
+import 'package:projeto_aula_07_03/tela_login.dart';
 
 class ExemploStack extends StatelessWidget {
   const ExemploStack({super.key});
@@ -17,13 +18,13 @@ class ExemploStack extends StatelessWidget {
         ),
         backgroundColor: Colors.amber,
       ),
-      body: criarStack(),
+      body: criarStack(context),
       backgroundColor: Colors.grey,
     );
   }
 }
 
-Stack criarStack() {
+Stack criarStack(BuildContext context) {
   return Stack(
     children: <Widget>[
       Image.network(
@@ -38,9 +39,12 @@ Stack criarStack() {
         left: 230,
         child: ElevatedButton(
           onPressed: () {
-            print("Botão Pressionado");
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const TelaLogin()),
+            );
           },
-          child: Text("Login"),
+          child: const Text("Ir para Login"),
         ),
       ),
     ],
