@@ -33,6 +33,16 @@ Stack criarStack() {
         fit: BoxFit.cover,
       ),
       Positioned(bottom: 100, left: 130, child: Text('DS Turma B')),
+      Positioned(
+        bottom: 50,
+        left: 230,
+        child: ElevatedButton(
+          onPressed: () {
+            print("Botão Pressionado");
+          },
+          child: Text("Login"),
+        ),
+      ),
     ],
   );
 }

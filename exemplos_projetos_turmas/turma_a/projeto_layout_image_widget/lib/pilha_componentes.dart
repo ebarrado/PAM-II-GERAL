@@ -36,7 +36,7 @@ class PilhaComponentes extends StatelessWidget {
 
 Stack criarPilhaComponente() {
   return Stack(
-    children: [
+    children: <Widget>[
       Image.network(
         "https://marketplace.canva.com/EAFhiTDWcOg/1/0/900w/canva-imagem-de-fundo-de-tela-para-celular-borboleta-degrad%C3%AA-azul-e-verde-_37ytwE_kmo.jpg",
         height: double.infinity,
