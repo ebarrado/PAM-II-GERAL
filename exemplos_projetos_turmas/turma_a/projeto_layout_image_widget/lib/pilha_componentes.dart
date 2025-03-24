@@ -1,5 +1,6 @@
 // pilha_componentes.dart
 import 'package:flutter/material.dart';
+import 'package:projeto_layout_image_widget/login.dart';
 
 //stl - Selecionar StatelesWidget
 class PilhaComponentes extends StatelessWidget {
@@ -29,12 +30,12 @@ class PilhaComponentes extends StatelessWidget {
           ),
         ],
       ),
-      body: criarPilhaComponente(),
+      body: criarPilhaComponente(context),
     );
   }
 }
 
-Stack criarPilhaComponente() {
+Stack criarPilhaComponente(BuildContext context) {
   return Stack(
     children: <Widget>[
       Image.network(
@@ -62,7 +63,11 @@ Stack criarPilhaComponente() {
         child: ElevatedButton(
           onPressed: () {
             //aqui é logica do botão
-            print("Abrir tela de login");
+            //print("Abrir tela de login");
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const TelaLogin()),
+            );
           },
           child: Text("Abrir Tela de Login"),
         ),
