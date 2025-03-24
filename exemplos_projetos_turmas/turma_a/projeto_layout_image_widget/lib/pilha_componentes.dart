@@ -44,15 +44,27 @@ Stack criarPilhaComponente() {
         fit: BoxFit.cover,
       ),
       Positioned(
-        bottom: 50,
+        bottom: 250,
         left: 100,
         child: Text(
           "DESENVOLVIMENTO SISTEMAS - TURMA A",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.deepOrange,
             fontSize: 20,
             fontFamily: "Arial",
           ),
+        ),
+      ),
+      Positioned(
+        bottom: 200,
+        left: 310,
+
+        child: ElevatedButton(
+          onPressed: () {
+            //aqui é logica do botão
+            print("Abrir tela de login");
+          },
+          child: Text("Abrir Tela de Login"),
         ),
       ),
     ],
