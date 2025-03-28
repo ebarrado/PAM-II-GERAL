@@ -7,10 +7,17 @@ class TelaCadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Cadastrar Usuário")),
+      appBar: AppBar(
+        title: Text("Cadastrar Usuário"),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               decoration: InputDecoration(
