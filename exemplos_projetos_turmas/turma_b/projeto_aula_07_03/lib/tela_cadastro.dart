@@ -27,42 +27,41 @@ class TelaCadastro extends StatelessWidget {
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 40),
           TextField(
             decoration: InputDecoration(
               labelText: "E-mail",
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 40),
           TextField(
             decoration: InputDecoration(
               labelText: "Endereço",
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 40),
           TextField(
             decoration: InputDecoration(
               labelText: "Cidade",
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 40),
           TextField(
             decoration: InputDecoration(
               labelText: "Estado",
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 40),
           ElevatedButton(
-              onPressed: () {
-                // Aqui pode adicionar a lógica de cadastro
-              },
-              child: const Text("Cadastrar"),
-            ),
-
+            onPressed: () {
+              // Aqui pode adicionar a lógica de cadastro
+            },
+            child: const Text("Cadastrar"),
+          ),
         ],
       ),
     );
