@@ -48,5 +48,5 @@ Praticar a criação de telas e a navegação entre elas em um aplicativo Flutte
 
 
 - Ao finalizar compacte os arquivos de telas em uma pasta com nome_sobrenome e envie para o e-mail: erika.barrado@etec.sp.gov.br
-    - Assunto: Atividades Telas 28-03
+    - Assunto: Atividades Telas 07-04
     - Mensagem: Nome Completo
