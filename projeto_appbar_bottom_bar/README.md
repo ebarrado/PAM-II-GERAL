@@ -1,16 +1,18 @@
-# projeto_appbar_bottom_bar
+# Trabalhando com AppBar e BottomNavigationBar
 
-A new Flutter project.
+Este é um projeto Flutter simples de exemplo, criado para demonstrar uma estrutura básica de aplicação com elementos de interface como `AppBar`, `BottomNavigationBar`, e interações com menus e botões.
 
-## Getting Started
+## Funcionalidades
 
-This project is a starting point for a Flutter application.
+- **Tela de Login**: O aplicativo apresenta uma tela principal com um título, ícones no `AppBar`, e um menu suspenso com opções de "Cadastrar" e "Contato".
+- **Navegação**: O `BottomNavigationBar` permite a navegação entre as seções de "Home" e "Cadastrar".
+- **Menu de Ações**: A `AppBar` contém ícones de ação, como um ícone de perfil e um menu suspenso.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologias Usadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: Framework para desenvolvimento de aplicativos móveis.
+- **Dart**: Linguagem utilizada para o desenvolvimento do aplicativo.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Exemplo da Tela criada
+
+![alt text](appbar_bootomnavigationBar.png)
