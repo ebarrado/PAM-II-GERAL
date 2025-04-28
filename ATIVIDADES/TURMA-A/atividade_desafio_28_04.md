@@ -1,17 +1,14 @@
 # Atividade Desafio: Criar layout de página de restaurante com Flutter
 
 ## Objetivo
-
 Criar um novo projeto Flutter e desenvolver a página inicial de um aplicativo de restaurante **usando exclusivamente widgets de `Column` e `Row`** para a organização dos elementos na tela.
 
 ## Instruções
-
 - Utilize apenas `Column` e `Row` para montar o layout (não usar `ListView`, `GridView`, `Flex`, etc.).
 - Crie uma estrutura parecida com a imagem de referência fornecida.
 - Utilize imagens, textos e botões conforme o exemplo.
 
-## A página deve conter
-
+## A página deve conter:
 - **AppBar** com:
   - Ícone do restaurante
   - Nome "Cardápio Restaurante"
@@ -37,4 +34,4 @@ Criar um novo projeto Flutter e desenvolver a página inicial de um aplicativo d
 
 ## Tela
 
-![alt text](../TURMA-B/img/produtos_restaurante.png)
+![alt text](../TURMA-A/img/produtos_restaurante.png)
