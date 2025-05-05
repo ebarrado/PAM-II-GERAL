@@ -11,7 +11,7 @@ class CardapioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Cardápio',
+      title: '🍽️ Cardápio Restaurante',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const CardapioListView(),
     );
@@ -25,16 +25,85 @@ class CardapioListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Cardápio')),
-      body: ListView(
-        children: [
-          CardapioItem("Pizza de Mussarela", "Deliciosa pizza de mussarela"),
-          CardapioItem("Pizza de Calabresa", "Saborosa pizza de calabresa"),
-          CardapioItem(
-            "Pizza de Frango com Catupiry",
-            "Deliciosa Pizza de frango com catupiry",
+      appBar: AppBar(
+        title: const Text(
+          '🍽️ Cardápio Restaurante',
+          style: TextStyle(color: Colors.white),
+        ),
+        actions: const [
+          Icon(Icons.search, color: const Color.fromARGB(255, 241, 241, 241)),
+          SizedBox(width: 16),
+        ],
+        backgroundColor: const Color.fromARGB(255, 223, 13, 13),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            CardapioItem(
+              "Pizza de Mussarela",
+              "Deliciosa pizza de mussarela",
+              "https://imagens.imirante.com.br/imagens/noticias/2024/01/24/dUNM2xe8QlsRbcQiPMrN7PsaK1pTExip6UD1Ni8q.jpg?w=896&h=448&crop=896%2C+448%2C+0%2C+26&fit=crop&fm=webp&s=ee5e8a27385bcca449e94286564705a0",
+              89.90,
+            ),
+            CardapioItem(
+              "Pizza de Marguerita",
+              "Pizza de marguerita com tomate e manjericão",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSetY5d0rQCAGZnsjh7IZEsDqSwUHbBrEx8yw&s",
+              90.99,
+            ),
+            CardapioItem(
+              "Pizza de Calabresa",
+              "Saborosa pizza de calabresa",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9q12OjKbFmOtepiFAYJop1tctLN06DG3CSA&s",
+              67.59,
+            ),
+            CardapioItem(
+              "Pizza de Frango com Catupiry",
+              "Deliciosa Pizza de frango com catupiry",
+              "https://swiftbr.vteximg.com.br/arquivos/ids/203714-636-636/618062-pizza-de-frango-com-catupiry-seara_1.jpg.jpg?v=638708260014000000",
+              89.00,
+            ),
+            CardapioItem(
+              "Pizza Portuguesa",
+              "Pizza portuguesa com ovos",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPk6Da5pSFa_4Eb4Pl5EfWPlWQ_JW2WR7ypg&s",
+              102.80,
+            ),
+          ],
+        ),
+      ),
+      // Adicionando BottomNavigationBar
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 223, 13, 13),
+        selectedIconTheme: const IconThemeData(color: Colors.white),
+        unselectedIconTheme: const IconThemeData(color: Colors.white70),
+        selectedItemColor: Colors.white, // Cor da label do item selecionado
+        unselectedItemColor:
+            Colors.white70, // Cor da label dos itens não selecionados
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.restaurant_menu,
+              color: const Color.fromARGB(255, 241, 241, 241),
+            ),
+            label: 'Cardapio',
+            backgroundColor: const Color.fromARGB(255, 253, 253, 253),
           ),
-          CardapioItem("Pizza Portuguesa", "Pizza portuguesa com ovos"),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_cart,
+              color: const Color.fromARGB(255, 241, 241, 241),
+            ),
+            label: 'Pedido',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              color: const Color.fromARGB(255, 241, 241, 241),
+            ),
+            label: 'Perfil',
+          ),
         ],
       ),
     );
@@ -44,19 +113,22 @@ class CardapioListView extends StatelessWidget {
 class CardapioItem extends StatelessWidget {
   final String itemCardapio; //parametro nomedoitem do cardapio
   final String descricao; //parametro descricao do item do cardapio
+  final String imagem; //parametro imagem do item do cardapio
+  final double preco; //parametro preco do item do cardapio
 
-  const CardapioItem(this.itemCardapio, this.descricao, {super.key});
+  const CardapioItem(
+    this.itemCardapio,
+    this.descricao,
+    this.imagem,
+    this.preco, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.network(
-          "https://media.istockphoto.com/id/938742222/pt/foto/cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=IMbsKsB8sD78lAiCFax9rJAfl9nMvvRurZkrmNIZMQA=",
-          width: 120,
-          height: 120,
-          fit: BoxFit.cover,
-        ),
+        Image.network(imagem, width: 120, height: 120, fit: BoxFit.cover),
         SizedBox(width: 10),
         Expanded(
           child: Column(
@@ -88,7 +160,7 @@ class CardapioItem extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   child: Text(
-                    "R\$ 78,90",
+                    "R\$" + preco.toString(),
                     style: TextStyle(
                       color: Colors.orange,
                       fontWeight: FontWeight.bold,
