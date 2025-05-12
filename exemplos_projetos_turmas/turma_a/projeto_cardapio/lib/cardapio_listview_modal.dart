@@ -109,8 +109,10 @@ class CardapioListView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Ação do botão flutuante
+          modalCadastrarItem(context);
         },
         backgroundColor: const Color.fromARGB(255, 223, 13, 13),
+        foregroundColor: Colors.white,
         child: const Icon(Icons.add),
       ),
     );
@@ -198,3 +200,55 @@ class CardapioItem extends StatelessWidget {
 }
 
 //Criar um Modal
+void modalCadastrarItem(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext contexto) {
+      return Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          height: 300,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Cadastrar Item',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: 'Nome do Item',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: 'Descrição',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: 'Preço',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // Ação do botão
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Cadastrar'),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
