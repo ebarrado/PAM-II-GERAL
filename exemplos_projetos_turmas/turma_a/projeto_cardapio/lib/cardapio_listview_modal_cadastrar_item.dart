@@ -1,4 +1,4 @@
-// cardapio_listview_modal copy 2.dart
+// cardapio_listview_modal_cadastrar_item.dart
 import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
 
 import 'package:flutter/material.dart';
@@ -129,6 +129,11 @@ class _CadastrarItemState extends State<CadastrarItem> {
 
   //Criar um Modal
   void modalCadastrarItem(BuildContext context) {
+    final TextEditingController nomeItemController = TextEditingController();
+    final TextEditingController descricaoItemController =
+        TextEditingController();
+    final TextEditingController precoItemController = TextEditingController();
+    final TextEditingController imagemItemController = TextEditingController();
     showDialog(
       context: context,
       builder: (BuildContext contexto) {
@@ -148,6 +153,7 @@ class _CadastrarItemState extends State<CadastrarItem> {
                 ),
                 const SizedBox(height: 20),
                 TextField(
+                  controller: nomeItemController,
                   decoration: const InputDecoration(
                     labelText: 'Nome do Item',
                     border: OutlineInputBorder(),
@@ -155,6 +161,7 @@ class _CadastrarItemState extends State<CadastrarItem> {
                 ),
                 const SizedBox(height: 10),
                 TextField(
+                  controller: descricaoItemController,
                   decoration: const InputDecoration(
                     labelText: 'Descrição',
                     border: OutlineInputBorder(),
@@ -162,8 +169,17 @@ class _CadastrarItemState extends State<CadastrarItem> {
                 ),
                 const SizedBox(height: 10),
                 TextField(
+                  controller: precoItemController,
                   decoration: const InputDecoration(
                     labelText: 'Preço',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: imagemItemController,
+                  decoration: const InputDecoration(
+                    labelText: 'Imagem do Item',
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -171,6 +187,13 @@ class _CadastrarItemState extends State<CadastrarItem> {
                 ElevatedButton(
                   onPressed: () {
                     // Ação do botão
+                    adicinarItemCardapio(
+                      nomeItemController.text,
+                      descricaoItemController.text,
+                      imagemItemController.text as Double,
+                      double.parse(precoItemController.text) as String,
+                    );
+
                     Navigator.of(context).pop();
                   },
                   child: const Text('Cadastrar'),
@@ -199,41 +222,20 @@ class _CadastrarItemState extends State<CadastrarItem> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          children: [
-            CardapioItem(
-              "Pizza de Mussarela",
-              "Deliciosa pizza de mussarela",
-              "https://imagens.imirante.com.br/imagens/noticias/2024/01/24/dUNM2xe8QlsRbcQiPMrN7PsaK1pTExip6UD1Ni8q.jpg?w=896&h=448&crop=896%2C+448%2C+0%2C+26&fit=crop&fm=webp&s=ee5e8a27385bcca449e94286564705a0",
-              89.90,
-            ),
-            CardapioItem(
-              "Pizza de Marguerita",
-              "Pizza de marguerita com tomate e manjericão",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSetY5d0rQCAGZnsjh7IZEsDqSwUHbBrEx8yw&s",
-              90.99,
-            ),
-            CardapioItem(
-              "Pizza de Calabresa",
-              "Saborosa pizza de calabresa",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9q12OjKbFmOtepiFAYJop1tctLN06DG3CSA&s",
-              67.59,
-            ),
-            CardapioItem(
-              "Pizza de Frango com Catupiry",
-              "Deliciosa Pizza de frango com catupiry",
-              "https://swiftbr.vteximg.com.br/arquivos/ids/203714-636-636/618062-pizza-de-frango-com-catupiry-seara_1.jpg.jpg?v=638708260014000000",
-              89.00,
-            ),
-            CardapioItem(
-              "Pizza Portuguesa",
-              "Pizza portuguesa com ovos",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPk6Da5pSFa_4Eb4Pl5EfWPlWQ_JW2WR7ypg&s",
-              102.80,
-            ),
-          ],
+        child: ListView.builder(
+          itemCount: _itemCardapio.length,
+          itemBuilder: (context, index) {
+            final item = _itemCardapio[index];
+            return CardapioItem(
+              item['nome']!,
+              item['descricao']!,
+              item['imagem']!,
+              double.parse(item['preco']!),
+            );
+          },
         ),
       ),
+
       // Adicionando BottomNavigationBar
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 223, 13, 13),
