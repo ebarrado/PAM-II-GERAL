@@ -145,4 +145,4 @@ void addItemCardapio(
 - Permite adicionar itens ao cardápio de forma dinâmica.
 - Utiliza o `setState` para atualizar a interface sempre que um novo item é cadastrado.
 
-- Exemplo prático de como gerenciar estado em um `StatefulWidget` no Flutter
+- Exemplo prático de como gerenciar estado em um `StatefulWidget` no Flutter.
