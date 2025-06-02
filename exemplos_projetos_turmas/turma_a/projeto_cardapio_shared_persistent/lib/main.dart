@@ -1,6 +1,4 @@
 // main.dart
-import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -114,7 +112,7 @@ class _CadastrarItemState extends State<CadastrarItem> {
   void adicinarItemCardapio(
     String nomeItem,
     String descricaoItem,
-    Double precoItem,
+    double precoItem,
     String imagemItem,
   ) {
     setState(() {
@@ -190,7 +188,7 @@ class _CadastrarItemState extends State<CadastrarItem> {
                     adicinarItemCardapio(
                       nomeItemController.text,
                       descricaoItemController.text,
-                      imagemItemController.text as Double,
+                      imagemItemController.text as double,
                       double.parse(precoItemController.text) as String,
                     );
 
