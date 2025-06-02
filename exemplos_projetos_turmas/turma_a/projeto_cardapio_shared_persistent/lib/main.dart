@@ -139,64 +139,70 @@ class _CadastrarItemState extends State<CadastrarItem> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            height: 300,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text(
-                  'Cadastrar Item',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 20),
-                TextField(
-                  controller: nomeItemController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nome do Item',
-                    border: OutlineInputBorder(),
+          child: Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              height: 400,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Cadastrar Item',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: descricaoItemController,
-                  decoration: const InputDecoration(
-                    labelText: 'Descrição',
-                    border: OutlineInputBorder(),
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: nomeItemController,
+                    decoration: const InputDecoration(
+                      labelText: 'Nome do Item',
+                      border: OutlineInputBorder(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: precoItemController,
-                  decoration: const InputDecoration(
-                    labelText: 'Preço',
-                    border: OutlineInputBorder(),
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: descricaoItemController,
+                    decoration: const InputDecoration(
+                      labelText: 'Descrição',
+                      border: OutlineInputBorder(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: imagemItemController,
-                  decoration: const InputDecoration(
-                    labelText: 'Imagem do Item',
-                    border: OutlineInputBorder(),
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: precoItemController,
+                    decoration: const InputDecoration(
+                      labelText: 'Preço',
+                      border: OutlineInputBorder(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    // Ação do botão
-                    adicinarItemCardapio(
-                      nomeItemController.text,
-                      descricaoItemController.text,
-                      imagemItemController.text as double,
-                      double.parse(precoItemController.text) as String,
-                    );
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: imagemItemController,
+                    decoration: const InputDecoration(
+                      labelText: 'Imagem do Item',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 223, 13, 13),
+                      foregroundColor: Colors.white,
+                    ),
+                    onPressed: () {
+                      // Ação do botão
+                      adicinarItemCardapio(
+                        nomeItemController.text,
+                        descricaoItemController.text,
+                        double.parse(precoItemController.text),
+                        imagemItemController.text,
+                      );
 
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('Cadastrar'),
-                ),
-              ],
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Cadastrar'),
+                  ),
+                ],
+              ),
             ),
           ),
         );
