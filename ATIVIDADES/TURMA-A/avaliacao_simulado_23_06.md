@@ -1,4 +1,4 @@
-# 📱 Questionário de Prova - Flutter (2º DS)
+# 📱 Questionário de Prova - Flutter (3º DS)
 
 Este questionário foi elaborado como parte da avaliação da disciplina de **Programação de Aplicativos Mobile II**, com foco na Programação Flutter, para a turma do **3º ano do curso de Desenvolvimento de Sistemas**.
 
